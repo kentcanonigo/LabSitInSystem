@@ -1,0 +1,56 @@
+﻿<Page x:Class="LabSitInSystem.StudentLogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LabSitInSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="1024" d:DesignWidth="1128"
+      Title="StudentLogPage">
+
+    <Grid>
+        <Label Content="History" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Height="57" Width="496" FontFamily="Inter 28pt 28pt" FontSize="40" HorizontalContentAlignment="Center"/>
+        <DataGrid Name="SitInsDataGrid"
+          AutoGenerateColumns="False"
+          CanUserAddRows="False"
+          IsReadOnly="True"
+          Margin="63,126,63,557">
+            <DataGrid.Columns>
+                <!-- Student Name -->
+                <DataGridTextColumn Header="Student Name" Binding="{Binding Student.FullName}" Width="*" />
+
+                <!-- StudentId -->
+                <DataGridTextColumn Header="Student ID" Binding="{Binding StudentId}" Width="Auto" />
+
+                <!-- TimeIn -->
+                <DataGridTextColumn Header="Time In" Binding="{Binding TimeIn, StringFormat=G}" Width="*" />
+
+                <!-- TimeOut -->
+                <DataGridTextColumn Header="Time Out" Binding="{Binding TimeOut, StringFormat=G}" Width="*" />
+
+                <!-- Duration -->
+                <DataGridTextColumn Header="Duration (mins)" Binding="{Binding Duration}" Width="Auto" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Pending Approval" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Width="496" FontFamily="Inter 28pt 28pt" FontSize="40" HorizontalContentAlignment="Center"/>
+        <DataGrid x:Name="PendingRequestsDataGrid"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            Margin="63,574,63,182">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Student Name" Binding="{Binding Student.FullName}" Width="*" />
+                <DataGridTextColumn Header="Student ID" Binding="{Binding StudentId}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ApproveButton" Content="Approve" HorizontalAlignment="Center" Margin="0,884,0,0" VerticalAlignment="Top" Height="56" Width="240" BorderBrush="{x:Null}" Foreground="White" FontFamily="Inter 18pt 18pt" FontSize="20" Background="#FF5CB338" Click="ApproveButton_Click"/>
+        <Button x:Name="RefreshButton" Content="" HorizontalAlignment="Left" Margin="950,470,0,0" VerticalAlignment="Top" Height="56" Width="57" BorderBrush="{x:Null}" FontFamily="Inter 18pt 18pt" FontSize="20" Click="RefreshButton_Click">
+            <Button.Foreground>
+                <ImageBrush ImageSource="/Assets/Images/refresh.png"/>
+            </Button.Foreground>
+            <Button.Background>
+                <ImageBrush ImageSource="/Assets/Images/refresh.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

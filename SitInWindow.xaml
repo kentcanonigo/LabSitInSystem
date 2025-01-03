@@ -1,0 +1,26 @@
+﻿<Window x:Class="LabSitInSystem.SitInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabSitInSystem"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="SitInWindow" Height="389" Width="252">
+    <Grid>
+        <Rectangle x:Name="StatusBar" HorizontalAlignment="Center" Height="12" VerticalAlignment="Top" Width="252" Fill="Red"/>
+        <Label x:Name="StatusLabel" Content="{}{Status}" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" Height="37" Width="232" FontFamily="Inter 18pt 18pt" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Label Content="Student Name:" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top" Height="26" Width="97" FontFamily="Inter 18pt 18pt" FontWeight="Bold"/>
+        <Label Content="ID Number:" HorizontalAlignment="Left" Margin="17,87,0,0" VerticalAlignment="Top" Height="26" Width="97" FontFamily="Inter 18pt 18pt" FontWeight="Bold"/>
+        <Label x:Name="TimeLeftLabel" Content="Time Left" HorizontalAlignment="Center" Margin="0,139,0,0" VerticalAlignment="Top" Height="31" Width="210" FontFamily="Inter 24pt 24pt ExtraBold" HorizontalContentAlignment="Center" FontSize="16"/>
+        <Label x:Name="TimerLabel" Content="59:59" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top" Height="70" Width="232" FontFamily="Inter 28pt 28pt" HorizontalContentAlignment="Center" FontSize="48" FontWeight="Bold"/>
+        <Label Content="Current Time" HorizontalAlignment="Center" Margin="0,252,0,0" VerticalAlignment="Top" Height="31" Width="133" FontFamily="Inter 24pt 24pt ExtraBold" HorizontalContentAlignment="Center" FontSize="16"/>
+        <Label x:Name="NameLabel" Content="{}{Name}" HorizontalAlignment="Left" Margin="111,68,0,0" VerticalAlignment="Top" Height="26" Width="120" FontFamily="Inter 18pt 18pt"/>
+        <Label x:Name="IDLabel" Content="{}{ID}" HorizontalAlignment="Left" Margin="88,87,0,0" VerticalAlignment="Top" Height="26" Width="120" FontFamily="Inter 18pt 18pt"/>
+        <Label Content="11:59 PM" HorizontalAlignment="Center" Margin="0,283,0,0" VerticalAlignment="Top" Height="26" Width="120" FontFamily="Inter 18pt 18pt" HorizontalContentAlignment="Center"/>
+        <Label Content="December 31, 2024" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Height="26" Width="120" FontFamily="Inter 18pt 18pt" HorizontalContentAlignment="Center"/>
+        <Button x:Name="EndSessionButton" Content="END SESSION" HorizontalAlignment="Center" Margin="0,334,0,0" VerticalAlignment="Top" Height="56" Width="259" BorderBrush="{x:Null}" Foreground="White" FontFamily="Inter 18pt 18pt" FontSize="20" Background="Black" FontWeight="Bold" Click="EndSessionButton_Click"/>
+
+    </Grid>
+</Window>
