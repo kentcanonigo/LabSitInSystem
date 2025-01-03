@@ -72,7 +72,7 @@ cd LabSitInSystem
 
 ## **Admin Account Setup**
 An initial admin account is seeded into the database:
-- **Username:** `admin@ctu.edu.ph`
+- **Username:** `admin`
 - **Password:** `admin123`
 
 You can update the admin credentials via the database or application.
@@ -109,3 +109,17 @@ This project is licensed under the MIT License.
 
 ## **Contact**
 For questions or support, please contact the project maintainer.
+
+---
+
+## **TODO**
+
+### **More Features**
+- Add detailed session history for students and admins.
+- Implement notifications for session timeouts and approvals.
+- Provide export options (e.g., CSV, PDF) for session records.
+
+### **Beautification**
+- Enhance UI/UX design using modern WPF styling.
+- Add themes (e.g., light/dark mode).
+- Include responsive layouts for better screen adaptability.
