@@ -42,22 +42,26 @@ cd LabSitInSystem
 2. Restore NuGet packages if prompted.
 
 #### **Set Up the Local Database**
-1. **Create a Database File:**
-   - Use any SQLite tool (e.g., DB Browser for SQLite) to create a new `.db` file.
-   - Example: `LaboratorySitInSystem.db`
 
-2. **Update Connection String:**
+1. **Generate Database File Using Migrations** (Recommended):
+   - Ensure the required NuGet packages are installed:
+     ```bash
+     Install-Package Microsoft.EntityFrameworkCore
+     Install-Package Microsoft.EntityFrameworkCore.Sqlite
+     Install-Package Microsoft.EntityFrameworkCore.Tools
+     ```
+   - Open the Package Manager Console in Visual Studio and run the following commands:
+     ```bash
+     Add-Migration InitialCreate
+     Update-Database
+     ```
+   - This will create the `LaboratorySitInSystem.db` file in the project directory.
+
+2. **Update Connection String (Mandatory):**
    - Navigate to `AppDbContext` in the project.
    - Replace the connection string in the `OnConfiguring` method with the path to your local database file:
      ```csharp
      optionsBuilder.UseSqlite("Data Source=\"C:\\path\\to\\your\\LaboratorySitInSystem.db\"");
-     ```
-
-3. **Apply Migrations:**
-   - Open the Package Manager Console in Visual Studio.
-   - Run the following commands:
-     ```bash
-     Update-Database
      ```
 
 #### **Run the Application**
@@ -68,7 +72,7 @@ cd LabSitInSystem
 
 ## **Admin Account Setup**
 An initial admin account is seeded into the database:
-- **Username:** `admin`
+- **Username:** `admin@ctu.edu.ph`
 - **Password:** `admin123`
 
 You can update the admin credentials via the database or application.
