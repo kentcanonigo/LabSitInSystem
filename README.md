@@ -72,8 +72,10 @@ cd LabSitInSystem
 
 ## **Admin Account Setup**
 An initial admin account is seeded into the database:
-- **Username:** `admin`
+- **Username:** `admin@ctu.edu.ph`
 - **Password:** `admin123`
+
+Note: It's not a real email address :)
 
 You can update the admin credentials via the database or application.
 
