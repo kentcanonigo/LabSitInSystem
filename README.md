@@ -10,6 +10,7 @@ This project is a WPF application developed using .NET 6.0 and SQLite for managi
 - Submit a session request for admin approval.
 - Track session timer upon approval.
 - Automatic session ending when time expires.
+- Receive notifications for remaining time.
 
 ### **For Admins**
 - View and approve/reject pending session requests.
@@ -72,10 +73,8 @@ cd LabSitInSystem
 
 ## **Admin Account Setup**
 An initial admin account is seeded into the database:
-- **Username:** `admin@ctu.edu.ph`
+- **Username:** `admin`
 - **Password:** `admin123`
-
-Note: It's not a real email address :)
 
 You can update the admin credentials via the database or application.
 
@@ -93,6 +92,56 @@ Ensure the file exists at the specified path.
 
 ---
 
+## **User Manual**
+
+### **For Students**
+
+#### **Logging In**
+1. Open the application and navigate to the Student Login screen.
+2. Enter your credentials (Student ID and Password) and click `Login`.
+
+#### **Starting a Lab Session**
+1. After logging in, click the `Start Session` button.
+2. Wait for admin approval. The status bar will display "Waiting for approval."
+3. Once approved, the timer will start, and the status bar will turn green, displaying "Lab Session Active."
+4. Notifications will appear when 20 minutes and 10 minutes remain.
+
+#### **Ending a Session**
+1. To end your session manually, click the `End Session` button.
+2. If the session is not approved, it will be canceled and removed from the system.
+3. If the session is approved, the system will record the session duration.
+
+#### **Notifications**
+- You will be notified when 20 minutes and 10 minutes remain in your session.
+- Ensure you monitor these notifications to manage your time effectively.
+
+---
+
+### **For Admins**
+
+#### **Logging In**
+1. Open the application and navigate to the Admin Login screen.
+2. Enter your credentials (Username and Password) and click `Login`.
+
+#### **Managing Pending Requests**
+1. Navigate to the Pending Requests section.
+2. View all unapproved session requests in the `PendingRequestsDataGrid`.
+3. To approve a session:
+   - Select a request and click the `Approve Selected` button.
+   - The session will move to the active sessions list.
+
+#### **Viewing and Managing Sessions**
+1. Navigate to the Sit-In Sessions section.
+2. View all approved sessions in the `SitInsDataGrid`.
+3. To delete or edit a session, use the appropriate options in the admin interface.
+
+#### **Managing Student Records**
+1. Navigate to the Student Records section.
+2. Use the `Add`, `Edit`, or `Delete` buttons to manage student information.
+3. Ensure each student has a unique ID and associated details.
+
+---
+
 ## **How to Contribute**
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix:
@@ -106,11 +155,6 @@ Ensure the file exists at the specified path.
 
 ## **License**
 This project is licensed under the MIT License.
-
----
-
-## **Contact**
-For questions or support, please contact the project maintainer.
 
 ---
 
