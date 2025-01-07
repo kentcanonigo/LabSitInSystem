@@ -136,6 +136,16 @@ namespace LabSitInSystem
             if (_remainingTime > TimeSpan.Zero) {
                 _remainingTime = _remainingTime.Subtract(TimeSpan.FromSeconds(1));
                 TimerLabel.Content = $"{_remainingTime.Minutes:D2}:{_remainingTime.Seconds:D2}";
+
+                // Notify the user when 20 minutes remain
+                if (_remainingTime == TimeSpan.FromMinutes(20)) {
+                    MessageBox.Show("20 minutes remaining in your session.", "Time Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                // Notify the user when 10 minutes remain
+                if (_remainingTime == TimeSpan.FromMinutes(10)) {
+                    MessageBox.Show("10 minutes remaining in your session.", "Time Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
             else {
                 // Time is up
@@ -144,6 +154,7 @@ namespace LabSitInSystem
                 EndSession(); // Automatically end the session
             }
         }
+
 
 
         private void EndSession() {

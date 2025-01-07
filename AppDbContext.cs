@@ -5,7 +5,6 @@ namespace LaboratorySitInSystem {
         public DbSet<User> Users { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<SitIn> SitIns { get; set; }
-        public DbSet<Notification> Notifications { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             optionsBuilder.UseSqlite("Data Source=\"C:\\Users\\Beast\\source\\repos\\LabSitInSystem\\LaboratorySitInSystem.db\"");
@@ -53,14 +52,5 @@ namespace LaboratorySitInSystem {
         public bool ApprovedByAdmin { get; set; }
 
         public Student Student { get; set; }
-    }
-
-    public class Notification {
-        public int NotificationId { get; set; }
-        public int SitInId { get; set; }
-        public string NotificationMessage { get; set; }
-        public DateTime NotificationTime { get; set; }
-
-        public SitIn SitIn { get; set; }
     }
 }
